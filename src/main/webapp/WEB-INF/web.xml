@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+<session-config>
+    <session-timeout>120</session-timeout>
+</session-config>
+
+<welcome-file-list>
+    <welcome-file>authentication.jsp</welcome-file>
+    <welcome-file>authentication.html</welcome-file>
+</welcome-file-list>
+
+
+<error-page>
+    <error-code>
+        400
+    </error-code>
+    <location>
+        /400.html
+    </location>
+</error-page>
+
+<error-page>
+    <error-code>
+        404
+    </error-code>
+    <location>
+        /404.html
+    </location>
+</error-page>
+
+<error-page>
+    <error-code>
+        500
+    </error-code>
+    <location>
+        /500.html
+    </location>
+</error-page>
+
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Some Resource</web-resource-name>
+        <url-pattern>/*</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <!--user-data-constraint>
+        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint-->
+</security-constraint>
+
+</web-app>
